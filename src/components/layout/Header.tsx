@@ -1,11 +1,13 @@
 import React from 'react';
 import { SearchIcon, NotificationIcon } from '../icons/Icons';
+import { useAuth } from '../../context/AuthContext';
 
 interface HeaderProps {
   activeItem: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ activeItem }) => {
+  const { logout } = useAuth();
   return (
     <header className="h-14 bg-white border-b border-gray-200 flex items-center justify-between px-4 flex-shrink-0">
       <div className="flex items-center space-x-3">
@@ -32,9 +34,18 @@ const Header: React.FC<HeaderProps> = ({ activeItem }) => {
         </button>
         
         {/* User */}
-        <div className="flex items-center space-x-2 cursor-pointer">
-          <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 text-xs font-medium">JD</div>
-          <span className="text-xs text-gray-700">John Doe</span>
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 cursor-pointer">
+            <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 text-xs font-medium">JD</div>
+            <span className="text-xs text-gray-700">John Doe</span>
+          </div>
+          
+          <button 
+            onClick={logout}
+            className="px-3 py-1.5 rounded-md text-xs font-medium text-gray-600 hover:bg-gray-100"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </header>
