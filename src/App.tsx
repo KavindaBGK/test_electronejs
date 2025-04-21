@@ -3,7 +3,7 @@ import Layout from './components/layout/Layout';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-import { DashboardIcon, AnalyticsIcon, ReportsIcon, SettingsIcon } from './components/icons/Icons';
+import { Home, BarChart2, FileText, Settings } from 'react-feather';
 import { NavItem } from './types';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -16,10 +16,10 @@ const AppContent = () => {
   
   // Navigation items with icons
   const navItems: NavItem[] = [
-    { name: 'Dashboard', icon: <DashboardIcon /> },
-    { name: 'Analytics', icon: <AnalyticsIcon /> },
-    { name: 'Reports', icon: <ReportsIcon /> },
-    { name: 'Settings', icon: <SettingsIcon /> }
+    { name: 'Dashboard', icon: <Home size={18} /> },
+    { name: 'Analytics', icon: <BarChart2 size={18} /> },
+    { name: 'Reports', icon: <FileText size={18} /> },
+    { name: 'Settings', icon: <Settings size={18} /> }
   ];
 
   // Show login/signup pages if not authenticated

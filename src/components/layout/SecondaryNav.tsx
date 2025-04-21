@@ -9,16 +9,16 @@ interface SecondaryNavProps {
 
 const SecondaryNav: React.FC<SecondaryNavProps> = ({ navItems, activeItem, setActiveItem }) => {
   return (
-    <div className="bg-white border-b border-gray-200 px-4 py-2.5 flex items-center space-x-1 flex-shrink-0">
+    <div className="bg-white border-b border-gray-200 px-6 py-3 flex items-center space-x-2 flex-shrink-0">
       {navItems.map((item) => (
         <button
           key={item.name}
           onClick={() => setActiveItem(item.name)}
-          className={`px-3 py-1.5 rounded-md text-xs font-medium flex items-center ${activeItem === item.name 
-            ? 'bg-violet-50 text-violet-700' 
+          className={`px-4 py-2 rounded-md text-sm font-medium flex items-center ${activeItem === item.name 
+            ? 'bg-blue-50 text-blue-700' 
             : 'text-gray-600 hover:bg-gray-50'}`}
         >
-          <span className="mr-1.5">{item.icon}</span>
+          <span className="mr-2">{item.icon}</span>
           {item.name}
         </button>
       ))}

@@ -40,11 +40,11 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-md">
         <div className="flex justify-center mb-8">
-          <div className="w-12 h-12 bg-violet-600 rounded-xl flex items-center justify-center">
-            <span className="text-white text-xl font-bold">A</span>
+          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
+            <span className="text-white text-xl font-bold">W</span>
           </div>
         </div>
         
@@ -67,7 +67,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="John Doe"
                 required
               />
@@ -82,7 +82,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="you@example.com"
                 required
               />
@@ -97,7 +97,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="••••••••"
                 required
               />
@@ -112,7 +112,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="••••••••"
                 required
               />
@@ -123,8 +123,8 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
               disabled={isLoading}
               className={`w-full py-2.5 px-4 rounded-md text-white text-sm font-medium ${
                 isLoading
-                  ? 'bg-violet-400 cursor-not-allowed'
-                  : 'bg-violet-600 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-violet-500'
+                  ? 'bg-blue-400 cursor-not-allowed'
+                  : 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
               }`}
             >
               {isLoading ? 'Creating account...' : 'Create account'}
@@ -136,7 +136,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSwitchToLogin }) => {
               Already have an account?{' '}
               <button 
                 onClick={onSwitchToLogin} 
-                className="text-violet-600 hover:text-violet-500 font-medium"
+                className="text-blue-600 hover:text-blue-500 font-medium"
               >
                 Sign in
               </button>

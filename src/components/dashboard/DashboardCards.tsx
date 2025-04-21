@@ -14,7 +14,7 @@ export const PerformanceCard: React.FC = () => {
           <span className="text-xs text-gray-500">vs 76.7% last week</span>
         </div>
         <div className="mt-4 h-2 bg-gray-100 rounded-full overflow-hidden">
-          <div className="h-full bg-violet-500 rounded-full" style={{width: '89.2%'}}></div>
+          <div className="h-full bg-blue-500 rounded-full" style={{width: '89.2%'}}></div>
         </div>
       </div>
     </div>
@@ -35,13 +35,13 @@ export const RevenueCard: React.FC = () => {
           <span className="text-xs text-gray-500">vs $25,392 last month</span>
         </div>
         <div className="mt-4 grid grid-cols-7 gap-1">
-          <div className="h-8 bg-violet-200 rounded-sm"></div>
-          <div className="h-12 bg-violet-300 rounded-sm"></div>
-          <div className="h-10 bg-violet-400 rounded-sm"></div>
-          <div className="h-16 bg-violet-500 rounded-sm"></div>
-          <div className="h-14 bg-violet-400 rounded-sm"></div>
-          <div className="h-10 bg-violet-300 rounded-sm"></div>
-          <div className="h-6 bg-violet-200 rounded-sm"></div>
+          <div className="h-8 bg-blue-200 rounded-sm"></div>
+          <div className="h-12 bg-blue-300 rounded-sm"></div>
+          <div className="h-10 bg-blue-400 rounded-sm"></div>
+          <div className="h-16 bg-blue-500 rounded-sm"></div>
+          <div className="h-14 bg-blue-400 rounded-sm"></div>
+          <div className="h-10 bg-blue-300 rounded-sm"></div>
+          <div className="h-6 bg-blue-200 rounded-sm"></div>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@ export const ActiveUsersCard: React.FC = () => {
         </div>
         <div className="mt-4 flex -space-x-2">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className={`w-7 h-7 rounded-full border-2 border-white flex-shrink-0 bg-${['violet', 'indigo', 'blue', 'green', 'yellow', 'red'][i]}-${i % 2 ? '400' : '500'}`}></div>
+            <div key={i} className={`w-7 h-7 rounded-full border-2 border-white flex-shrink-0 bg-${['blue', 'indigo', 'sky', 'cyan', 'teal', 'green'][i]}-${i % 2 ? '400' : '500'}`}></div>
           ))}
           <div className="w-7 h-7 rounded-full border-2 border-white flex-shrink-0 bg-gray-200 flex items-center justify-center">
             <span className="text-[10px] text-gray-600 font-medium">+18</span>

@@ -39,7 +39,7 @@ const ActivityFeed: React.FC = () => {
         <div className="space-y-3">
           {activities.map((activity) => (
             <div key={activity.id} className="flex items-center py-2 border-b border-gray-100 last:border-0">
-              <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 mr-3 flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 flex-shrink-0">
                 {activity.initial}
               </div>
               <div className="flex-1 min-w-0">
