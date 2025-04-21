@@ -3,7 +3,7 @@ import Layout from './components/layout/Layout';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
-import { Home, BarChart2, FileText, Settings } from 'react-feather';
+import { Home, BarChart2, FileText, Settings, Layers } from 'react-feather';
 import { NavItem } from './types';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
@@ -17,6 +17,7 @@ const AppContent = () => {
   // Navigation items with icons
   const navItems: NavItem[] = [
     { name: 'Dashboard', icon: <Home size={18} /> },
+    { name: 'All work', icon: <Layers size={18} /> },
     { name: 'Analytics', icon: <BarChart2 size={18} /> },
     { name: 'Reports', icon: <FileText size={18} /> },
     { name: 'Settings', icon: <Settings size={18} /> }

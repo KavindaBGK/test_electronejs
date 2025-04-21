@@ -18,22 +18,18 @@ const Layout: React.FC<LayoutProps> = ({
   setActiveItem 
 }) => {
   return (
-    <div className="flex h-screen w-full bg-gray-50 font-sans text-sm overflow-hidden rounded-lg shadow-lg">
-      {/* Left Sidebar - Now collapsible with rounded corners */}
-      <div className="flex-shrink-0 rounded-tl-lg rounded-bl-lg overflow-hidden">
-        <Sidebar 
-          navItems={navItems} 
-          activeItem={activeItem} 
-          setActiveItem={setActiveItem} 
-        />
-      </div>
+    <div className="flex h-screen w-full bg-gray-50 font-sans text-sm overflow-hidden">
+      {/* Left Sidebar - Now collapsible */}
+      <Sidebar 
+        navItems={navItems} 
+        activeItem={activeItem} 
+        setActiveItem={setActiveItem} 
+      />
       
       {/* Main Content Area */}
       <div className="flex flex-col flex-1 overflow-hidden">
-        {/* Top Navigation with rounded top-right corner */}
-        <div className="rounded-tr-lg overflow-hidden">
-          <Header activeItem={activeItem} />
-        </div>
+        {/* Top Navigation */}
+        <Header activeItem={activeItem} />
         
         {/* Secondary Navigation */}
         <SecondaryNav 
@@ -43,12 +39,7 @@ const Layout: React.FC<LayoutProps> = ({
         />
         
         {/* Main Content */}
-        <div className="flex-1 overflow-auto">
-          {children}
-        </div>
-
-        {/* Bottom right corner rounding */}
-        <div className="rounded-br-lg"></div>
+        {children}
       </div>
     </div>
   );
