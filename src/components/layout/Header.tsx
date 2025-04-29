@@ -1,17 +1,40 @@
 import React from 'react';
-import { Search, Bell } from 'react-feather';
+import { Search, Bell, ArrowLeft } from 'react-feather';
 import { useAuth } from '../../context/AuthContext';
+import { useExtensions } from '../../services/ExtensionContext.tsx';
 
 interface HeaderProps {
   activeItem: string;
+  isExtensionActive?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ activeItem }) => {
+const Header: React.FC<HeaderProps> = ({ activeItem, isExtensionActive = false }) => {
   const { logout } = useAuth();
+  const { activeExtensionId, extensions, deactivateExtension } = useExtensions();
+  
+  // Find active extension details if an extension is active
+  const activeExtension = isExtensionActive && activeExtensionId
+    ? extensions.find(ext => ext.id === activeExtensionId)
+    : null;
+  
   return (
     <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-6 flex-shrink-0">
       <div className="flex items-center space-x-3">
-        <h1 className="text-lg font-semibold text-gray-800">{activeItem}</h1>
+        {isExtensionActive && activeExtension ? (
+          <div className="flex items-center">
+            <button
+              onClick={() => deactivateExtension()}
+              className="mr-3 p-1 rounded-full hover:bg-gray-100 text-gray-500"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <h1 className="text-lg font-semibold text-gray-800">
+              {activeExtension.package.displayName || activeExtension.id}
+            </h1>
+          </div>
+        ) : (
+          <h1 className="text-lg font-semibold text-gray-800">{activeItem}</h1>
+        )}
       </div>
       
       <div className="flex items-center space-x-4">
@@ -37,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ activeItem }) => {
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2 cursor-pointer">
             <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-xs font-medium">JD</div>
-            <span className="text-sm text-gray-700">John Doe</span>
+            <span className="text-sm text-gray-700">Keshara Kavinda</span>
           </div>
           
           <button 

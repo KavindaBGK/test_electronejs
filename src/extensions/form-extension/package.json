@@ -1,0 +1,18 @@
+{
+  "name": "form-extension",
+  "displayName": "Form Extension",
+  "description": "A form extension with multiple form types and submissions management",
+  "version": "1.0.0",
+  "main": "extension.js",
+  "activationEvents": [
+    "onCommand:form-extension.showForm"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "form-extension.showForm",
+        "title": "Show Form Extension"
+      }
+    ]
+  }
+} 

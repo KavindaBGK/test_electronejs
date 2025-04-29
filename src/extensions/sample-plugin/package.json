@@ -1,0 +1,23 @@
+{
+  "name": "sample-plugin",
+  "displayName": "Sample Plugin",
+  "version": "1.0.0",
+  "description": "A sample plugin to demonstrate the plugin interface",
+  "main": "index.js",
+  "contributes": {
+    "menus": {
+      "main": [
+        {
+          "command": "sample-plugin.hello",
+          "title": "Say Hello",
+          "icon": "home"
+        },
+        {
+          "command": "sample-plugin.info",
+          "title": "Show Info",
+          "icon": "settings"
+        }
+      ]
+    }
+  }
+} 

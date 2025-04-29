@@ -1,0 +1,7 @@
+{
+  "name": "sample-extension",
+  "displayName": "Sample Extension",
+  "description": "A sample extension for testing the platform",
+  "version": "0.0.1",
+  "main": "extension.js"
+} 

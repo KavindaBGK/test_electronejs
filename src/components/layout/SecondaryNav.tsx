@@ -5,9 +5,20 @@ interface SecondaryNavProps {
   navItems: NavItem[];
   activeItem: string;
   setActiveItem: (item: string) => void;
+  isExtensionActive?: boolean;
 }
 
-const SecondaryNav: React.FC<SecondaryNavProps> = ({ navItems, activeItem, setActiveItem }) => {
+const SecondaryNav: React.FC<SecondaryNavProps> = ({ 
+  navItems, 
+  activeItem, 
+  setActiveItem, 
+  isExtensionActive = false 
+}) => {
+  // If an extension is active, don't render any navigation items
+  if (isExtensionActive) {
+    return <div className="bg-white border-b border-gray-200 px-6 py-3 flex-shrink-0"></div>;
+  }
+
   return (
     <div className="bg-white border-b border-gray-200 px-6 py-3 flex items-center space-x-2 flex-shrink-0">
       {navItems.map((item) => (

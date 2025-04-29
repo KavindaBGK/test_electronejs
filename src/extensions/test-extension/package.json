@@ -1,0 +1,9 @@
+{
+    "name": "test-extension",
+    "version": "1.0.0",
+    "description": "A test extension for the extension system",
+    "main": "extension.js",
+    "engines": {
+        "vscode": "^1.0.0"
+    }
+} 

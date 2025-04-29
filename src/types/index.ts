@@ -26,3 +26,23 @@ export interface Activity {
   description: string;
   time: string;
 }
+
+// Plugin interfaces
+export interface PluginMenuItem {
+  id: string;
+  label: string;
+  icon?: string;
+  action?: string;
+  children?: PluginMenuItem[];
+}
+
+export interface PluginMenuResponse {
+  items: PluginMenuItem[];
+  success: boolean;
+  error?: string;
+}
+
+export interface PluginInterface {
+  getMenuItems: () => Promise<PluginMenuResponse>;
+  executeAction: (actionId: string, params?: any) => Promise<any>;
+}

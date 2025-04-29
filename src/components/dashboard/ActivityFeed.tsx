@@ -6,7 +6,7 @@ const ActivityFeed: React.FC = () => {
       id: 1,
       initial: 'U',
       title: 'User profile updated',
-      description: 'John Doe updated their profile picture',
+      description: 'Keshara Kavinda updated their profile picture',
       time: '2m ago'
     },
     {

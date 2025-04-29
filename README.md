@@ -1,3 +1,83 @@
+# Test App with Plugin Interface
+
+This is a test application built with Electron, React, and TypeScript that demonstrates a plugin interface system.
+
+## Features
+
+- Electron-based desktop application
+- React and TypeScript for the frontend
+- Plugin interface for extending functionality
+- Authentication system (mock)
+- Dashboard with analytics
+
+## Plugin System
+
+The application includes a plugin system that allows you to create and load custom plugins. Plugins can provide menu items and execute actions.
+
+### Plugin Interface
+
+Plugins must implement the following interface:
+
+```typescript
+interface PluginInterface {
+  // Called when the plugin is activated
+  activate: (context: any) => void;
+  
+  // Return menu items to display in the UI
+  getMenuItems: () => PluginMenuItem[];
+  
+  // Execute an action with the given ID and parameters
+  executeAction: (actionId: string, params?: any) => Promise<any>;
+}
+```
+
+### Plugin Menu Items
+
+Menu items have the following structure:
+
+```typescript
+interface PluginMenuItem {
+  id: string;        // Unique identifier for the menu item
+  label: string;     // Display text
+  icon?: string;     // Icon name (optional)
+  action?: string;   // Action ID to execute when clicked (optional)
+  children?: PluginMenuItem[]; // Submenu items (optional)
+}
+```
+
+### Creating a Plugin
+
+1. Create a directory in `src/extensions/` with your plugin name
+2. Create a `package.json` file with metadata about your plugin
+3. Create an `index.js` file that exports the required interface functions
+4. Implement the plugin functionality
+
+See the sample plugin in `src/extensions/sample-plugin` for an example.
+
+## Development
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Run in development mode
+
+```
+npm run dev
+```
+
+### Build for production
+
+```
+npm run build
+```
+
+## License
+
+MIT
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

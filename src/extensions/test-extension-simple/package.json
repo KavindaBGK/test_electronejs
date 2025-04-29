@@ -1,0 +1,7 @@
+{
+  "name": "test-extension-simple",
+  "displayName": "Simple Test Extension",
+  "description": "A simple test extension that works with ES modules",
+  "version": "1.0.0",
+  "main": "main.js"
+} 
