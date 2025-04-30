@@ -50,6 +50,12 @@ function activate(pluginContext) {
     return { success: true };
   });
 
+  context.registerCommand('sample-plugin.home', () => {
+    console.log('Navigating to home page');
+    navigateToPage('home');
+    return { success: true };
+  });
+
   // Create a basic webview
   panel = context.createWebviewPanel(
     'sample-plugin',
@@ -397,7 +403,8 @@ function getMenuItems() {
     {
       id: 'home',
       label: 'Home',
-      icon: 'home'
+      icon: 'home',
+      action: 'sample-plugin.home'
     },
     {
       id: 'actions',
@@ -444,6 +451,10 @@ async function executeAction(actionId, params) {
     }),
     'sample-plugin.settings': () => {
       navigateToPage('settings');
+      return { success: true };
+    },
+    'sample-plugin.home': () => {
+      navigateToPage('home');
       return { success: true };
     }
   };

@@ -8,6 +8,11 @@
     "menus": {
       "main": [
         {
+          "command": "sample-plugin.home",
+          "title": "Home",
+          "icon": "home"
+        },
+        {
           "command": "sample-plugin.hello",
           "title": "Say Hello",
           "icon": "home"
