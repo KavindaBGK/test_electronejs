@@ -16,6 +16,11 @@
           "command": "sample-plugin.info",
           "title": "Show Info",
           "icon": "settings"
+        },
+        {
+          "command": "sample-plugin.settings",
+          "title": "Settings",
+          "icon": "settings"
         }
       ]
     }
